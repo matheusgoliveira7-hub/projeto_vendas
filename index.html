@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <title>AuraPulse™ Pro - Smartwatch de Precisão com Telemetria Cirúrgica</title>
+  
+  <!-- SEO & Metadados de Indexação -->
+  <meta name="description" content="AuraPulse Pro: Smartwatch de alta precisão em titânio aeroespacial. Monitor cardíaco contínuo, ECG em tempo real, bateria de 10 dias e conectividade inteligente.">
+  <meta name="keywords" content="smartwatch, relógio inteligente, monitor cardíaco, ecg, titânio, pressão arterial, saúde, fitness">
+  <meta name="theme-color" content="#0e1321">
+  <meta name="author" content="AuraPulse Technologies">
+  
+  <!-- Open Graph & Redes Sociais -->
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="AuraPulse™ Pro - Smartwatch em Titânio Aeroespacial">
+  <meta property="og:description" content="Seu corpo em sintonia, sua rotina sob controle. 35% de desconto de lançamento + Frete Grátis para todo o Brasil.">
+  <meta property="og:image" content="assets/images/watch-premium.jpg">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AuraPulse™ Pro - Smartwatch de Precisão">
+  <meta name="twitter:description" content="Monitoramento biométrico contínuo 24/7 com acabamento de luxo e resistência militar.">
+  
+  <!-- Schema.org Microdata para Google Rich Snippets -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "AuraPulse™ Pro Smartwatch",
+    "image": "assets/images/watch-premium.jpg",
+    "description": "Smartwatch com sensores de biometria clínica, ECG ativo e corpo em titânio aeroespacial.",
+    "brand": {
+      "@type": "Brand",
+      "name": "AuraPulse"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "#",
+      "priceCurrency": "BRL",
+      "price": "187.00",
+      "priceValidUntil": "2026-12-31",
+      "availability": "https://schema.org/InStock",
+      "itemCondition": "https://schema.org/NewCondition"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "3420"
+    }
+  }
+  </script>
+
+  <!-- Tipografia Oficial do Design System -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN para utilitários atômicos modernos -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            surface: "#0e1321",
+            "surface-dim": "#0e1321",
+            "surface-bright": "#343948",
+            "surface-container-lowest": "#090e1c",
+            "surface-container-low": "#161b2a",
+            "surface-container": "#1a1f2e",
+            "surface-container-high": "#252a39",
+            "surface-container-highest": "#303444",
+            "on-surface": "#dee2f6",
+            "on-surface-variant": "#b9cacb",
+            primary: "#dbfcff",
+            "primary-container": "#00f0ff",
+            "on-primary-container": "#00454a",
+            secondary: "#4edea3",
+            "secondary-container": "#00a572",
+            "secondary-fixed-dim": "#4edea3",
+            error: "#ffb4ab",
+            "error-container": "#93000a",
+            outline: "#849495"
+          },
+          fontFamily: {
+            display: ["'Plus Jakarta Sans'", "sans-serif"],
+            body: ["'Inter'", "sans-serif"]
+          },
+          borderRadius: {
+            DEFAULT: "1rem",
+            lg: "1.5rem",
+            xl: "2rem",
+            full: "9999px"
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Folha de Estilos Independente de Produção -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="bg-surface text-on-surface flex flex-col min-h-screen tech-grid-bg">
+  
+  <!-- Link Acessível de Navegação por Teclado (WCAG) -->
+  <a href="#main-content" class="sr-only focus:not-sr-only">Pular para o conteúdo principal</a>
+
+  <!-- CABEÇALHO PRINCIPAL COM BLUR E ELEVAÇÃO TÉCNICA -->
+  <header class="fixed top-0 w-full z-40 pt-safe glass-nav shadow-lg" role="banner">
+    <div class="max-w-4xl mx-auto h-16 px-4 sm:px-6 flex items-center justify-between gap-3">
+      <!-- Identidade Visual -->
+      <a href="#" class="flex items-center gap-2.5 group transition-transform active:scale-95" aria-label="Página Inicial do AuraPulse">
+        <img src="assets/images/logo.png" alt="Logotipo Oficial AuraPulse" class="h-8 w-auto object-contain" width="32" height="32">
+        <div class="flex flex-col">
+          <span class="font-display font-extrabold text-lg text-white tracking-tight leading-none group-hover:text-primary-container transition-colors">AuraPulse</span>
+          <span class="text-[11px] text-on-surface-variant font-medium tracking-wide">Titanium Pro Edition</span>
+        </div>
+      </a>
+
+      <!-- Ações do Cabeçalho -->
+      <div class="flex items-center gap-2">
+        <!-- Botão de Som Háptico Tátil -->
+        <button id="sound-toggle-btn" class="w-10 h-10 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full bg-surface-container-high/80 text-primary-container hover:bg-surface-container-highest transition-colors" title="Ativar/Desativar som tátil de cliques" aria-label="Alternar som háptico">
+          <span id="sound-toggle-icon" class="material-symbols-outlined text-[19px]">volume_up</span>
+        </button>
+
+        <div class="hidden sm:flex items-center gap-1.5 bg-surface-container-high/70 px-3 py-1.5 rounded-full border border-white/5">
+          <span class="material-symbols-outlined text-secondary text-[16px]">verified</span>
+          <span class="text-[11px] text-secondary font-bold tracking-wider uppercase">100% Original</span>
+        </div>
+        
+        <!-- Carrinho de Compras -->
+        <button id="cart-button" class="relative w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full bg-surface-container-high/80 text-on-surface hover:text-primary-container hover:bg-surface-container-highest transition-all" data-path="cart-checkout" aria-label="Abrir carrinho de compras">
+          <span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+          <span class="absolute top-2 right-2 w-2.5 h-2.5 rounded-full bg-primary-container animate-pulse"></span>
+        </button>
+
+        <!-- Botão CTA Compacto Desktop -->
+        <a href="#hero-offer" class="hidden md:inline-flex items-center gap-1.5 px-4 py-2 min-h-[44px] rounded-full bg-primary-container text-on-primary-container font-display font-bold text-xs uppercase tracking-wider hover:opacity-90 transition-opacity" data-path="checkout">
+          <span>Garantir Desconto</span>
+          <span class="material-symbols-outlined text-[16px]">bolt</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main id="main-content" class="flex-1 flex flex-col w-full pt-16 pb-28" role="main">
+    
+    <!-- SEÇÃO 1: HERO & OFERTA PRINCIPAL -->
+    <section id="hero" class="relative w-full max-w-4xl mx-auto px-4 sm:px-6 pt-6 pb-12 flex flex-col items-center overflow-hidden" aria-labelledby="hero-title">
+      <!-- Glow Ambiente Centralizado -->
+      <div class="absolute -top-16 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary-container/15 rounded-full blur-[100px] pointer-events-none"></div>
+
+      <!-- Badge de Escassez e Autenticidade -->
+      <div class="motion-fade-up relative z-10 flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-container-high/90 border border-white/10 shadow-lg">
+        <span class="material-symbols-outlined text-secondary text-[16px]">verified</span>
+        <span class="text-xs font-bold text-secondary tracking-widest uppercase">Edição Limitada • 100% Original</span>
+      </div>
+
+      <!-- Título Principal -->
+      <h1 id="hero-title" class="motion-fade-up delay-100 relative z-10 mt-4 font-display text-3xl sm:text-4xl md:text-5xl text-center text-white font-extrabold tracking-tight leading-tight">
+        Seu Corpo em Sintonia, <br>
+        <span class="text-gradient-cyan">Sua Rotina Sob Controle</span>
+      </h1>
+
+      <!-- Subtítulo de Conversão -->
+      <p class="motion-fade-up delay-150 relative z-10 mt-3 text-slate-300 text-center max-w-md text-sm sm:text-base leading-relaxed font-normal">
+        Monitore cada batimento cardíaco, receba mensagens instantâneas e otimize seu bem-estar no pulso com acabamento de titânio aeroespacial.
+      </p>
+
+      <!-- Vitrine do Produto em 3D Interativo (WebGL Three.js) -->
+      <div class="motion-scale-up delay-200 relative z-10 w-full mt-4 flex flex-col items-center justify-center">
+        <div class="relative w-full max-w-[440px] h-[370px] sm:h-[430px] flex items-center justify-center">
+          
+          <!-- Halos Neon de Pulso Radial Tridimensional -->
+          <div class="absolute inset-2 rounded-full bg-primary-container/10 halo-pulse pointer-events-none"></div>
+          <div class="absolute inset-10 rounded-full bg-primary-container/20 blur-3xl pointer-events-none"></div>
+
+          <!-- Canvas 3D Interativo do Smartwatch -->
+          <div id="watch-3d-canvas-container" class="relative z-10 w-full h-full flex items-center justify-center drop-shadow-[0_25px_45px_rgba(0,240,255,0.4)]" role="img" aria-label="Modelo 3D Interativo do AuraPulse Pro em Titânio">
+            <!-- Fallback para navegadores sem WebGL -->
+            <img id="hero-watch-image" class="hidden floating-product w-64 h-64 sm:w-72 sm:h-72 object-contain"
+              src="assets/images/watch-hero.png"
+              alt="Smartwatch AuraPulse Titanium Pro"
+              width="288" height="288"
+              loading="eager">
+          </div>
+
+          <!-- Badge Flutuante: Telemetria Cardíaca ao Vivo -->
+          <div class="absolute bottom-2 left-2 sm:left-4 z-20 flex items-center gap-2.5 px-3 py-1.5 rounded-full glass-panel-elevated shadow-xl border border-secondary/30 pointer-events-none">
+            <span class="relative flex h-3 w-3">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-3 w-3 bg-secondary"></span>
+            </span>
+            <div class="flex flex-col text-left">
+              <span class="font-display text-xs font-bold text-white leading-none">138 bpm</span>
+              <span class="text-[9px] text-secondary font-semibold leading-tight">Ritmo Normal</span>
+            </div>
+          </div>
+
+          <!-- Badge Flutuante: Visor Ativo com Troca de Modos -->
+          <div id="watch-active-screen" class="watch-screen-content absolute top-2 right-2 sm:right-4 z-20 flex items-center gap-2 px-3 py-1.5 rounded-full glass-panel-elevated shadow-xl border border-primary-container/30 pointer-events-none">
+            <svg class="w-10 h-4 text-primary-container" fill="none" viewBox="0 0 60 20" aria-hidden="true">
+              <path class="ecg-line" d="M0 10H14L18 3L23 17L28 7L32 12L36 10H60" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"></path>
+            </svg>
+            <span class="font-display text-xs text-primary font-bold">ECG Ativo</span>
+          </div>
+        </div>
+
+        <!-- Barra de Controles 3D Interativos -->
+        <div class="flex items-center gap-2 mt-1 z-20 bg-surface-container-high/80 px-3 py-1.5 rounded-full border border-white/10 shadow-md">
+          <span class="material-symbols-outlined text-primary-container text-[16px] animate-spin" style="animation-duration: 4s;">3d_rotation</span>
+          <span class="text-[11px] text-white font-semibold">Arraste para girar em 360°</span>
+          <span class="text-slate-500">•</span>
+          <button id="auto-spin-3d-btn" class="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase transition-colors bg-primary-container text-slate-950" title="Ativar ou pausar rotação automática">Auto Spin</button>
+          <button id="reset-3d-view-btn" class="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase transition-colors bg-surface-container text-on-surface-variant hover:text-white" title="Restaurar ângulo frontal">Reset</button>
+        </div>
+      </div>
+
+      <!-- SELETOR DE MODOS DO MOSTRADOR INTERATIVO -->
+      <div class="motion-fade-up delay-220 relative z-10 flex items-center gap-2 mt-3 bg-surface-container-lowest/80 p-1 rounded-full border border-white/10">
+        <span class="text-[11px] text-on-surface-variant font-semibold pl-2 pr-1 hidden sm:inline">Modo do Visor:</span>
+        <button class="screen-mode-btn px-3 py-1.5 min-h-[38px] rounded-full text-xs transition-all bg-primary-container text-slate-950 font-bold" data-mode="cardio">🫀 Cardio ECG</button>
+        <button class="screen-mode-btn px-3 py-1.5 min-h-[38px] rounded-full text-xs transition-all bg-surface-container-high text-on-surface-variant hover:text-white" data-mode="sport">🏃 Corrida</button>
+        <button class="screen-mode-btn px-3 py-1.5 min-h-[38px] rounded-full text-xs transition-all bg-surface-container-high text-on-surface-variant hover:text-white" data-mode="notif">💬 Notificações</button>
+      </div>
+
+      <!-- SELETOR DE ACABAMENTOS E TAMANHO -->
+      <section id="variants" class="motion-fade-up delay-250 relative z-10 w-full mt-4 p-4 rounded-xl glass-panel flex flex-col items-center text-center max-w-md border border-white/10" aria-label="Seletor de acabamento e tamanho">
+        <span class="text-xs uppercase font-bold text-on-surface-variant tracking-wider">Escolha seu Acabamento:</span>
+        <span id="selected-variant-name" class="font-display font-bold text-sm text-primary-container mt-0.5">Titânio Aeroespacial (Natural)</span>
+        
+        <!-- Swatches de Acabamento com Área de Toque WCAG -->
+        <div class="flex items-center gap-3.5 mt-3" role="radiogroup" aria-label="Cores do Relógio">
+          <button class="variant-swatch active bg-gradient-to-tr from-slate-500 to-slate-200 shadow-md" data-variant="titanium" aria-label="Acabamento Titânio Aeroespacial" title="Titânio Natural"></button>
+          <button class="variant-swatch bg-gradient-to-tr from-black via-slate-900 to-slate-700 shadow-md" data-variant="midnight" aria-label="Acabamento Midnight Black" title="Midnight Black"></button>
+          <button class="variant-swatch bg-gradient-to-tr from-slate-300 via-white to-slate-200 shadow-md" data-variant="starlight" aria-label="Acabamento Starlight Silver" title="Starlight Silver"></button>
+        </div>
+
+        <!-- Seletor de Tamanho de Caixa -->
+        <div class="flex items-center gap-2 mt-4 bg-surface-container-lowest p-1 rounded-full border border-white/5" role="radiogroup" aria-label="Tamanho da caixa">
+          <button class="size-selector-btn px-4 py-2 min-h-[44px] rounded-full text-xs font-bold transition-all bg-surface-container-high text-primary-container shadow-sm border-cyan-subtle" aria-checked="true">41mm (Compacto)</button>
+          <button class="size-selector-btn px-4 py-2 min-h-[44px] rounded-full text-xs font-bold transition-all text-on-surface-variant hover:text-white" aria-checked="false">45mm (Max Display)</button>
+        </div>
+      </section>
+
+      <!-- CARD DE PREÇO, OFERTA E CTA DE CONVERSÃO -->
+      <section id="hero-offer" class="motion-fade-up delay-300 relative z-10 w-full mt-5 p-5 rounded-xl glass-panel-elevated flex flex-col items-center max-w-md" aria-label="Oferta Especial de Lançamento">
+        
+        <!-- Timer de Escassez -->
+        <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary-container/20 text-secondary border border-secondary/30">
+          <span class="material-symbols-outlined text-[15px]">timer</span>
+          <span class="text-xs font-bold uppercase tracking-wider">Oferta Expira Em: <span id="countdown-timer" class="font-mono text-white">02h 47m 18s</span></span>
+        </div>
+
+        <!-- Seletor de Forma de Pagamento Interativo -->
+        <div class="flex items-center gap-2 mt-4 bg-surface-container-lowest p-1 rounded-full border border-white/10 w-full">
+          <button class="pay-method-btn flex-1 py-1.5 min-h-[40px] rounded-full text-xs font-bold transition-all bg-surface-container-highest text-primary-container border-cyan-subtle" data-method="card">💳 Cartão em até 12x</button>
+          <button class="pay-method-btn flex-1 py-1.5 min-h-[40px] rounded-full text-xs font-bold transition-all text-on-surface-variant hover:text-white" data-method="pix">⚡ PIX (-5% Extra)</button>
+        </div>
+
+        <!-- Preços em Destaque -->
+        <div class="mt-4 flex items-baseline gap-2.5">
+          <span class="text-sm text-on-surface-variant line-through font-medium">De R$ 289,00</span>
+          <span id="price-main-val" class="font-display text-4xl text-primary font-black tracking-tight">R$ 187,00</span>
+        </div>
+        <span id="price-terms-val" class="text-xs font-semibold text-secondary-fixed-dim mt-1 text-center">ou até 12x de R$ 18,70 sem juros no cartão de crédito</span>
+
+        <!-- Botão CTA Principal de Alta Conversão -->
+        <button class="btn-primary mt-5 w-full py-4 px-6 rounded-full flex items-center justify-between text-left group" data-path="checkout" aria-label="Quero meu AuraPulse com desconto">
+          <div class="flex flex-col">
+            <span class="font-display text-[15px] sm:text-[16px] font-extrabold uppercase tracking-tight text-slate-950 leading-tight">
+              Quero Meu AuraPulse Com Desconto
+            </span>
+            <span class="text-[11px] font-bold text-slate-900/90 tracking-wide flex items-center gap-1.5 mt-0.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-secondary animate-ping inline-block"></span>
+              35% Off • Envio Imediato + Frete Grátis
+            </span>
+          </div>
+          <div class="w-10 h-10 rounded-full bg-slate-950 text-primary-container flex items-center justify-center shadow-md flex-shrink-0 ml-2 group-hover:scale-110 transition-transform">
+            <span class="material-symbols-outlined text-[20px]">bolt</span>
+          </div>
+        </button>
+
+        <!-- Calculadora de Frete por CEP -->
+        <div class="mt-4 w-full pt-4 border-t border-white/10 flex flex-col">
+          <div class="flex items-center gap-2">
+            <input id="shipping-cep-input" type="text" placeholder="Digite seu CEP (ex: 01001-000)" maxlength="9" class="flex-1 bg-surface-container-high/90 border border-white/10 rounded-full px-4 py-2 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-primary-container">
+            <button id="calc-cep-btn" class="px-4 py-2 min-h-[38px] rounded-full bg-surface-container-high text-primary-container border border-cyan-subtle text-xs font-bold hover:bg-surface-container-highest transition-colors">Calcular</button>
+          </div>
+          <div id="shipping-result" class="hidden mt-2 p-2.5 rounded-lg bg-surface-container-high/60 text-xs"></div>
+        </div>
+
+        <!-- Selo de Garantia -->
+        <div class="mt-3 flex items-center gap-1.5 text-on-surface-variant text-xs">
+          <span class="material-symbols-outlined text-secondary text-[18px]">verified_user</span>
+          <span>Garantia Incondicional de 30 Dias ou Dinheiro de Volta</span>
+        </div>
+      </section>
+
+    </section>
+
+    <!-- SEÇÃO NOVA: GALERIA DE ENGENHARIA & DETALHES MACRO -->
+    <section id="gallery" class="w-full max-w-4xl mx-auto py-10 px-4 sm:px-6 flex flex-col" aria-label="Galeria de Detalhes do Produto">
+      <div class="motion-fade-up text-center mb-6">
+        <span class="text-xs font-bold uppercase tracking-widest text-primary-container">Engenharia Suíça & Biometria</span>
+        <h2 class="font-display text-2xl sm:text-3xl text-white font-bold mt-1">Construção Milimétrica para Alta Exigência</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <!-- Foto 1: Sensores Traseiros -->
+        <article class="motion-fade-up delay-100 rounded-xl overflow-hidden glass-panel border border-white/10 group">
+          <div class="relative overflow-hidden aspect-square">
+            <img src="assets/images/watch-sensors.jpg" alt="Sensores ópticos biométricos de 4 canais na cerâmica traseira" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" width="400" height="400">
+            <span class="absolute bottom-2 left-2 text-[10px] uppercase font-bold text-white bg-slate-950/80 backdrop-blur px-2.5 py-1 rounded-full border border-secondary/40">4 Canais Ópticos PPG</span>
+          </div>
+          <div class="p-3">
+            <h3 class="font-display font-bold text-sm text-white">Sensores Cerâmicos 4-LED</h3>
+            <p class="text-xs text-on-surface-variant mt-0.5">Leitura precisa através do tecido dérmico com emissão infravermelha e esmeralda.</p>
+          </div>
+        </article>
+
+        <!-- Foto 2: Atleta em Corrida Noturna -->
+        <article class="motion-fade-up delay-150 rounded-xl overflow-hidden glass-panel border border-white/10 group">
+          <div class="relative overflow-hidden aspect-square">
+            <img src="assets/images/watch-athlete.jpg" alt="AuraPulse Pro sendo utilizado durante sprint noturno urbano" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" width="400" height="400">
+            <span class="absolute bottom-2 left-2 text-[10px] uppercase font-bold text-white bg-slate-950/80 backdrop-blur px-2.5 py-1 rounded-full border border-primary-container/40">Alta Visibilidade OLED</span>
+          </div>
+          <div class="p-3">
+            <h3 class="font-display font-bold text-sm text-white">Performance Sob Pressão</h3>
+            <p class="text-xs text-on-surface-variant mt-0.5">Visor AMOLED de 1.200 nits com legibilidade total mesmo sob suor e movimento rápido.</p>
+          </div>
+        </article>
+
+        <!-- Foto 3: Midnight Black Casing -->
+        <article class="motion-fade-up delay-200 rounded-xl overflow-hidden glass-panel border border-white/10 group">
+          <div class="relative overflow-hidden aspect-square">
+            <img src="assets/images/watch-premium.jpg" alt="Acabamento titânio escovado Midnight Black" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" width="400" height="400">
+            <span class="absolute bottom-2 left-2 text-[10px] uppercase font-bold text-white bg-slate-950/80 backdrop-blur px-2.5 py-1 rounded-full border border-white/30">Titânio Grau Aeroespacial</span>
+          </div>
+          <div class="p-3">
+            <h3 class="font-display font-bold text-sm text-white">Carcaça em Titânio Grau 5</h3>
+            <p class="text-xs text-on-surface-variant mt-0.5">Ultra resistente a corrosão, impactos e riscos com peso incrivelmente leve no pulso.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SEÇÃO NOVA: TABELA COMPARATIVA DE ESPECIFICAÇÕES -->
+    <section id="comparison" class="w-full max-w-4xl mx-auto py-10 px-4 sm:px-6 flex flex-col" aria-label="Comparativo Técnico">
+      <div class="motion-fade-up text-center mb-6">
+        <span class="text-xs font-bold uppercase tracking-widest text-secondary">Por que somos superiores?</span>
+        <h2 class="font-display text-2xl sm:text-3xl text-white font-bold mt-1">AuraPulse Pro vs Relógios Comuns</h2>
+      </div>
+
+      <div class="motion-scale-up delay-100 overflow-x-auto glass-panel rounded-xl border border-white/10">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th class="text-left">Especificação Técnica</th>
+              <th class="text-center aurapulse-col">AuraPulse™ Pro</th>
+              <th class="text-center text-slate-400">Outros do Mercado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="font-medium text-slate-200">Material da Caixa</td>
+              <td class="text-center aurapulse-col">Titânio Aeroespacial Grau 5</td>
+              <td class="text-center text-slate-400">Alumínio frágil ou Plástico</td>
+            </tr>
+            <tr>
+              <td class="font-medium text-slate-200">Duração da Bateria</td>
+              <td class="text-center aurapulse-col">7 a 10 dias contínuos</td>
+              <td class="text-center text-slate-400">18 a 24 horas (recarregar todo dia)</td>
+            </tr>
+            <tr>
+              <td class="font-medium text-slate-200">Vidro do Visor</td>
+              <td class="text-center aurapulse-col">Cristal Safira Dureza 9H Anti-Risco</td>
+              <td class="text-center text-slate-400">Vidro mineral comum que risca</td>
+            </tr>
+            <tr>
+              <td class="font-medium text-slate-200">Telemetria de Saúde</td>
+              <td class="text-center aurapulse-col">ECG Ativo + Pressão + Sono + O2</td>
+              <td class="text-center text-slate-400">Apenas contador básico de passos</td>
+            </tr>
+            <tr>
+              <td class="font-medium text-slate-200">Resistência à Água</td>
+              <td class="text-center aurapulse-col">5ATM / IP68 (Mergulho 50m)</td>
+              <td class="text-center text-slate-400">Apenas respingos leves</td>
+            </tr>
+            <tr>
+              <td class="font-medium text-slate-200">Garantia Sem Risco</td>
+              <td class="text-center aurapulse-col">30 Dias Incondicional + 1 Ano</td>
+              <td class="text-center text-slate-400">7 dias burocráticos</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 2: CONECTIVIDADE SEM FIO EM TEMPO REAL -->
+    <section id="connectivity" class="w-full bg-surface-container-low/60 py-12 px-4 sm:px-6" aria-labelledby="connectivity-title">
+      <div class="max-w-4xl mx-auto flex flex-col">
+        
+        <div class="motion-fade-up flex items-center gap-2">
+          <div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-primary-container">
+            <span class="material-symbols-outlined text-[18px]">cell_tower</span>
+          </div>
+          <span class="text-xs font-bold uppercase tracking-widest text-primary-container">Conexão Contínua</span>
+        </div>
+
+        <h2 id="connectivity-title" class="motion-fade-up delay-100 mt-2 font-display text-2xl sm:text-3xl text-white font-bold leading-tight">
+          Conectividade sem Fio em Tempo Real: O Mundo no Seu Pulso
+        </h2>
+        
+        <p class="motion-fade-up delay-150 mt-1 text-slate-300 text-sm sm:text-base leading-relaxed max-w-xl">
+          Controle chamadas recebidas com identificador inteligente e leia mensagens completas sem precisar tirar o smartphone do bolso.
+        </p>
+
+        <!-- Grid de Aplicativos Suportados -->
+        <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 gap-3">
+          
+          <article class="motion-fade-up delay-100 p-4 rounded-xl bg-surface-container flex flex-col items-center text-center border border-white/5 hover:border-primary-container/30 transition-colors">
+            <div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-secondary">
+              <span class="material-symbols-outlined text-[22px]">chat</span>
+            </div>
+            <h3 class="mt-2.5 font-display font-semibold text-sm text-slate-100">WhatsApp</h3>
+            <p class="text-xs text-slate-300 mt-0.5">Mensagens & Áudios</p>
+          </article>
+
+          <article class="motion-fade-up delay-150 p-4 rounded-xl bg-surface-container flex flex-col items-center text-center border border-white/5 hover:border-primary-container/30 transition-colors">
+            <div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary-container">
+              <span class="material-symbols-outlined text-[22px]">photo_camera</span>
+            </div>
+            <h3 class="mt-2.5 font-display font-semibold text-sm text-slate-100">Instagram</h3>
+            <p class="text-xs text-slate-300 mt-0.5">Direct & Notificações</p>
+          </article>
+
+          <article class="motion-fade-up delay-200 p-4 rounded-xl bg-surface-container flex flex-col items-center text-center border border-white/5 hover:border-primary-container/30 transition-colors">
+            <div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-secondary-fixed-dim">
+              <span class="material-symbols-outlined text-[22px]">call</span>
+            </div>
+            <h3 class="mt-2.5 font-display font-semibold text-sm text-slate-100">Chamadas</h3>
+            <p class="text-xs text-slate-300 mt-0.5">Identificador HD</p>
+          </article>
+
+          <article class="motion-fade-up delay-250 p-4 rounded-xl bg-surface-container flex flex-col items-center text-center border border-white/5 hover:border-primary-container/30 transition-colors">
+            <div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary">
+              <span class="material-symbols-outlined text-[22px]">sms</span>
+            </div>
+            <h3 class="mt-2.5 font-display font-semibold text-sm text-slate-100">SMS / Push</h3>
+            <p class="text-xs text-slate-300 mt-0.5">Leitura Rápida</p>
+          </article>
+
+          <article class="motion-fade-up delay-300 p-4 rounded-xl bg-surface-container flex flex-col items-center text-center border border-white/5 hover:border-primary-container/30 transition-colors">
+            <div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary-fixed-dim">
+              <span class="material-symbols-outlined text-[22px]">work</span>
+            </div>
+            <h3 class="mt-2.5 font-display font-semibold text-sm text-slate-100">LinkedIn</h3>
+            <p class="text-xs text-slate-300 mt-0.5">Alertas Profissionais</p>
+          </article>
+
+          <article class="motion-fade-up delay-350 p-4 rounded-xl bg-surface-container flex flex-col items-center text-center border border-white/5 hover:border-primary-container/30 transition-colors">
+            <div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-secondary">
+              <span class="material-symbols-outlined text-[22px]">public</span>
+            </div>
+            <h3 class="mt-2.5 font-display font-semibold text-sm text-slate-100">Redes & Apps</h3>
+            <p class="text-xs text-slate-300 mt-0.5">X, Spotify, Strava & Outros</p>
+          </article>
+
+        </div>
+
+        <!-- Simulador Interativo de Alertas Personalizados -->
+        <div class="motion-fade-up delay-400 mt-4 p-4 rounded-xl glass-panel-elevated flex items-center justify-between shadow-md">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-primary-container/20 flex items-center justify-center text-primary-container">
+              <span class="material-symbols-outlined text-[22px]">tune</span>
+            </div>
+            <div class="flex flex-col">
+              <span class="font-display font-semibold text-sm text-white">Alertas Personalizados Hápticos</span>
+              <span id="alerts-toggle-status" class="text-xs text-secondary font-medium">Notificações Ativas no Pulso</span>
+            </div>
+          </div>
+          <!-- Switch Interativo -->
+          <div id="alerts-toggle-track" class="switch-track active" role="switch" aria-checked="true" aria-label="Alternar alertas de notificações" tabindex="0">
+            <div class="switch-thumb"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SEÇÃO 3: BIOMETRIA CLÍNICA & ASSISTENTE DE SAÚDE -->
+    <section id="health" class="w-full max-w-4xl mx-auto py-12 px-4 sm:px-6 flex flex-col" aria-labelledby="health-title">
+      
+      <div class="motion-fade-up flex items-center gap-2">
+        <div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-rose-400">
+          <span class="material-symbols-outlined text-[18px]">favorite</span>
+        </div>
+        <span class="text-xs font-bold uppercase tracking-widest text-rose-400">Biometria Clínica</span>
+      </div>
+
+      <h2 id="health-title" class="motion-fade-up delay-100 mt-2 font-display text-2xl sm:text-3xl text-white font-bold leading-tight">
+        Muito Mais Que Um Relógio: Seu Assistente de Saúde 24/7
+      </h2>
+
+      <p class="motion-fade-up delay-150 mt-1 text-slate-300 text-sm sm:text-base leading-relaxed max-w-xl">
+        Sensores biométricos de precisão calibrados para monitoramento contínuo da sua integridade física diurna e noturna.
+      </p>
+
+      <!-- Bento Cards de Telemetria de Saúde -->
+      <div class="mt-8 flex flex-col gap-3.5">
+        
+        <!-- Card 1: Monitor Cardíaco Contínuo -->
+        <article class="motion-fade-up delay-100 p-4 sm:p-5 rounded-xl bg-surface-container flex flex-col shadow-sm border border-white/5">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-11 h-11 rounded-full bg-rose-500/20 flex items-center justify-center text-rose-400">
+                <span class="material-symbols-outlined text-[24px]">ecg_heart</span>
+              </div>
+              <div>
+                <h3 class="font-display font-bold text-sm sm:text-base text-slate-100">Monitor Cardíaco Contínuo</h3>
+                <p class="text-xs text-slate-300 leading-snug">Leitura de pulso em tempo real com alerta inteligente de anomalias</p>
+              </div>
+            </div>
+            <span class="font-display text-lg sm:text-xl text-rose-400 font-extrabold tracking-tight">74 bpm</span>
+          </div>
+        </article>
+
+        <!-- Card 2: Pressão Arterial Estimada -->
+        <article class="motion-fade-up delay-150 p-4 sm:p-5 rounded-xl bg-surface-container flex flex-col shadow-sm border border-white/5">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-11 h-11 rounded-full bg-secondary-container/20 flex items-center justify-center text-secondary">
+                <span class="material-symbols-outlined text-[24px]">vital_signs</span>
+              </div>
+              <div>
+                <h3 class="font-display font-bold text-sm sm:text-base text-slate-100">Pressão Arterial Estimada</h3>
+                <p class="text-xs text-slate-300 leading-snug">Histórico sincronizado e curvas de tendência no dashboard móvel</p>
+              </div>
+            </div>
+            <span class="font-display text-lg sm:text-xl text-secondary font-extrabold tracking-tight">120/80</span>
+          </div>
+        </article>
+
+        <!-- Card 3: Análise do Sono Inteligente -->
+        <article class="motion-fade-up delay-200 p-4 sm:p-5 rounded-xl bg-surface-container flex flex-col shadow-sm border border-white/5">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-11 h-11 rounded-full bg-primary-container/20 flex items-center justify-center text-primary-container">
+                <span class="material-symbols-outlined text-[24px]">bedtime</span>
+              </div>
+              <div>
+                <h3 class="font-display font-bold text-sm sm:text-base text-slate-100">Análise do Sono Inteligente</h3>
+                <p class="text-xs text-slate-300 leading-snug">Fases de sono profundo, REM, sono leve e índice restaurador</p>
+              </div>
+            </div>
+            <span class="font-display text-lg sm:text-xl text-primary-container font-extrabold tracking-tight">92 pts</span>
+          </div>
+          <!-- Barra Gráfica de Estágios do Sono -->
+          <div class="mt-4 w-full h-2.5 rounded-full bg-surface-container-highest overflow-hidden flex" aria-label="Gráfico de estágios do sono">
+            <div class="h-full bg-primary-container" style="width: 25%" title="Sono Profundo (25%)"></div>
+            <div class="h-full bg-secondary" style="width: 55%" title="Sono Leve (55%)"></div>
+            <div class="h-full bg-cyan-200" style="width: 20%" title="Sono REM (20%)"></div>
+          </div>
+          <div class="mt-2.5 flex justify-between text-slate-300 text-xs font-medium">
+            <span>Profundo: 2h 15m</span>
+            <span>Leve: 4h 40m</span>
+            <span>Total: 7h 45m</span>
+          </div>
+        </article>
+
+        <!-- Mini Grid de Cuidados Preventivos -->
+        <div class="grid grid-cols-2 gap-3 mt-1">
+          <article class="motion-fade-up delay-250 p-4 rounded-xl bg-surface-container flex flex-col border border-white/5">
+            <span class="material-symbols-outlined text-primary-container text-[24px]">water_drop</span>
+            <h4 class="mt-2 font-display font-bold text-xs sm:text-sm text-slate-100">Hidratação Ativa</h4>
+            <p class="text-xs text-slate-300 mt-0.5 leading-snug">Lembretes para ingestão regular de água</p>
+          </article>
+
+          <article class="motion-fade-up delay-300 p-4 rounded-xl bg-surface-container flex flex-col border border-white/5">
+            <span class="material-symbols-outlined text-rose-300 text-[24px]">medication</span>
+            <h4 class="mt-2 font-display font-bold text-xs sm:text-sm text-slate-100">Medicamentos</h4>
+            <p class="text-xs text-slate-300 mt-0.5 leading-snug">Alarmes nos horários configurados</p>
+          </article>
+
+          <article class="motion-fade-up delay-350 p-4 rounded-xl bg-surface-container flex flex-col border border-white/5">
+            <span class="material-symbols-outlined text-secondary text-[24px]">directions_walk</span>
+            <h4 class="mt-2 font-display font-bold text-xs sm:text-sm text-slate-100">Anti-Sedentarismo</h4>
+            <p class="text-xs text-slate-300 mt-0.5 leading-snug">Alerta para se levantar e se movimentar</p>
+          </article>
+
+          <article class="motion-fade-up delay-400 p-4 rounded-xl bg-surface-container flex flex-col border border-white/5">
+            <span class="material-symbols-outlined text-slate-200 text-[24px]">vibration</span>
+            <h4 class="mt-2 font-display font-bold text-xs sm:text-sm text-slate-100">Alarme Háptico</h4>
+            <p class="text-xs text-slate-300 mt-0.5 leading-snug">Despertador silencioso suave no pulso</p>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SEÇÃO 4: ESPECIFICAÇÕES, ENGENHARIA & PERFORMANCE -->
+    <section id="performance" class="w-full bg-surface-container-low/60 py-12 px-4 sm:px-6" aria-labelledby="performance-title">
+      <div class="max-w-4xl mx-auto flex flex-col">
+        
+        <div class="motion-fade-up flex items-center gap-2">
+          <div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-primary-container">
+            <span class="material-symbols-outlined text-[18px]">speed</span>
+          </div>
+          <span class="text-xs font-bold uppercase tracking-widest text-primary-container">Engenharia & Rigor</span>
+        </div>
+
+        <h2 id="performance-title" class="motion-fade-up delay-100 mt-2 font-display text-2xl sm:text-3xl text-white font-bold leading-tight">
+          Alta Performance e Precisão Cirúrgica
+        </h2>
+
+        <p class="motion-fade-up delay-150 mt-1 text-slate-300 text-sm sm:text-base leading-relaxed max-w-xl">
+          Construído com especificações de ponta para acompanhar desde sua rotina executiva até treinos de extrema intensidade.
+        </p>
+
+        <!-- Bento Grid de Especificações -->
+        <div class="mt-8 flex flex-col gap-3.5">
+          
+          <!-- Métricas Esportivas -->
+          <article class="motion-fade-up delay-100 p-5 rounded-xl bg-surface-container flex flex-col border border-white/5">
+            <div class="flex items-center gap-2 text-secondary">
+              <span class="material-symbols-outlined text-[22px]">fitness_center</span>
+              <h3 class="font-display text-sm sm:text-base font-bold text-white">Métricas Esportivas Completas</h3>
+            </div>
+            <div class="grid grid-cols-3 gap-2.5 mt-4 text-center">
+              <div class="p-3 rounded-lg bg-surface-container-high/70">
+                <span class="font-display text-lg sm:text-xl text-white font-bold block">12.450</span>
+                <span class="text-[11px] text-on-surface-variant font-medium">Passos Diários</span>
+              </div>
+              <div class="p-3 rounded-lg bg-surface-container-high/70">
+                <span class="font-display text-lg sm:text-xl text-secondary font-bold block">640</span>
+                <span class="text-[11px] text-on-surface-variant font-medium">Kcal Queimadas</span>
+              </div>
+              <div class="p-3 rounded-lg bg-surface-container-high/70">
+                <span class="font-display text-lg sm:text-xl text-primary font-bold block">8.4</span>
+                <span class="text-[11px] text-on-surface-variant font-medium">Km Percorridos</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Bateria Longa Duração -->
+          <article class="motion-fade-up delay-150 p-5 rounded-xl bg-surface-container flex items-center justify-between border border-white/5">
+            <div class="flex items-center gap-3.5">
+              <div class="w-11 h-11 rounded-full bg-secondary-container/20 flex items-center justify-center text-secondary">
+                <span class="material-symbols-outlined text-[24px]">battery_charging_full</span>
+              </div>
+              <div>
+                <h3 class="font-display font-bold text-sm sm:text-base text-white">Bateria de Ultra Longa Duração</h3>
+                <p class="text-xs text-on-surface-variant">Até 10 dias com carregador rápido magnético por indução</p>
+              </div>
+            </div>
+            <span class="text-xs font-bold text-secondary px-3 py-1 rounded-full bg-secondary-container/20 border border-secondary/30">
+              7-10 DIAS
+            </span>
+          </article>
+
+          <!-- Suporte Multilíngue Oficial -->
+          <article class="motion-fade-up delay-200 p-5 rounded-xl bg-surface-container flex flex-col border border-white/5">
+            <div class="flex items-center gap-2 text-primary-container">
+              <span class="material-symbols-outlined text-[22px]">translate</span>
+              <h3 class="font-display font-bold text-sm sm:text-base text-white">Suporte Multilíngue Oficial</h3>
+            </div>
+            <p class="mt-1 text-xs text-on-surface-variant">
+              Interface do relógio e notificações 100% nativas em Português do Brasil (PT-BR), além dos principais idiomas globais:
+            </p>
+            <div class="flex flex-wrap gap-2 mt-3">
+              <span class="px-2.5 py-1 rounded-full bg-surface-container-high text-white text-xs font-medium">PT-BR 🇧🇷</span>
+              <span class="px-2.5 py-1 rounded-full bg-surface-container-high text-white text-xs font-medium">EN 🇺🇸</span>
+              <span class="px-2.5 py-1 rounded-full bg-surface-container-high text-white text-xs font-medium">ES 🇪🇸</span>
+              <span class="px-2.5 py-1 rounded-full bg-surface-container-high text-white text-xs font-medium">FR 🇫🇷</span>
+              <span class="px-2.5 py-1 rounded-full bg-surface-container-high text-white text-xs font-medium">DE 🇩🇪</span>
+              <span class="px-2.5 py-1 rounded-full bg-surface-container-high text-white text-xs font-medium">IT 🇮🇹</span>
+            </div>
+          </article>
+
+          <!-- Resistência Militar -->
+          <article class="motion-fade-up delay-250 p-5 rounded-xl bg-surface-container flex items-center gap-3.5 border border-white/5">
+            <div class="w-11 h-11 rounded-full bg-surface-container-high flex items-center justify-center text-primary-container">
+              <span class="material-symbols-outlined text-[24px]">shield</span>
+            </div>
+            <div>
+              <h3 class="font-display font-bold text-sm sm:text-base text-white">Resistência Militar 5ATM / IP68</h3>
+              <p class="text-xs text-on-surface-variant">Vidro temperado 9H ultra reforçado resistente a riscos e pulseira anatômica em silicone cirúrgico hipoalergênico.</p>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SEÇÃO 5: CONFIANÇA, AVALIAÇÕES E AUTENTICIDADE -->
+    <section id="testimonials" class="w-full max-w-4xl mx-auto py-12 px-4 sm:px-6 flex flex-col items-center text-center" aria-labelledby="testimonials-title">
+      
+      <!-- Selo Central de Autenticidade -->
+      <div class="motion-fade-up w-14 h-14 rounded-full bg-primary-container/20 flex items-center justify-center text-primary-container mb-3 glow-cyan">
+        <span class="material-symbols-outlined text-[32px]">verified</span>
+      </div>
+
+      <span class="motion-fade-up delay-100 text-xs font-bold uppercase tracking-widest text-primary-container">
+        Autenticidade Certificada AuraPulse
+      </span>
+
+      <h2 id="testimonials-title" class="motion-fade-up delay-150 mt-1 font-display text-2xl sm:text-3xl text-white font-bold">
+        Original de Fábrica com Garantia Total
+      </h2>
+
+      <p class="motion-fade-up delay-200 mt-2 text-slate-300 max-w-md text-sm leading-relaxed font-normal">
+        Garantimos produto 100% autêntico com número de série individual registrado, testes laboratoriais de precisão e 1 ano de garantia de fábrica contra qualquer defeito.
+      </p>
+
+      <!-- Card de Avaliação Social -->
+      <div class="motion-scale-up delay-250 mt-6 w-full p-6 rounded-xl glass-panel-elevated flex flex-col items-center border border-white/10">
+        <!-- Estrelas de Classificação -->
+        <div class="flex items-center gap-1 text-primary-container" aria-label="Classificação 4.9 de 5 estrelas">
+          <span class="material-symbols-outlined text-[24px]">star</span>
+          <span class="material-symbols-outlined text-[24px]">star</span>
+          <span class="material-symbols-outlined text-[24px]">star</span>
+          <span class="material-symbols-outlined text-[24px]">star</span>
+          <span class="material-symbols-outlined text-[24px]">star</span>
+        </div>
+
+        <div class="mt-2 flex items-baseline gap-2">
+          <span class="font-display text-2xl text-white font-extrabold">4.9 / 5.0</span>
+          <span class="text-xs text-on-surface-variant font-medium">de avaliação média</span>
+        </div>
+
+        <span class="text-xs font-semibold text-secondary mt-1">
+          Mais de 3.420 clientes satisfeitos no Brasil em 2024
+        </span>
+
+        <!-- Depoimento em Destaque -->
+        <figure class="mt-5 p-4 rounded-xl bg-surface-container-high/60 text-left w-full border border-white/5">
+          <div class="flex items-center gap-2.5 mb-2">
+            <div class="w-8 h-8 rounded-full bg-primary-container text-slate-950 font-bold text-xs flex items-center justify-center">
+              MR
+            </div>
+            <div class="flex flex-col">
+              <span class="font-display font-bold text-sm text-white">Marcelo R.</span>
+              <span class="text-[11px] text-on-surface-variant">São Paulo, SP</span>
+            </div>
+            <span class="ml-auto text-[11px] font-semibold text-secondary bg-secondary/10 px-2 py-0.5 rounded-full border border-secondary/20">
+              Compra Verificada
+            </span>
+          </div>
+          <blockquote class="text-xs sm:text-sm text-slate-200 italic leading-relaxed">
+            "A precisão do batimento cardíaco e a qualidade da tela OLED são impressionantes. Conectou no iPhone em 20 segundos e a bateria durou 9 dias inteiros no primeiro ciclo. Vale cada centavo!"
+          </blockquote>
+        </figure>
+      </div>
+
+    </section>
+
+    <!-- SEÇÃO 6: PERGUNTAS FREQUENTES (FAQ ACCORDION) -->
+    <section id="faq" class="w-full max-w-4xl mx-auto py-10 px-4 sm:px-6 flex flex-col" aria-labelledby="faq-title">
+      <div class="motion-fade-up text-center mb-6">
+        <span class="text-xs font-bold uppercase tracking-widest text-primary-container">Dúvidas Comuns</span>
+        <h2 id="faq-title" class="font-display text-2xl sm:text-3xl text-white font-bold mt-1">Perguntas Frequentes</h2>
+      </div>
+
+      <div class="flex flex-col gap-3">
+        <!-- FAQ 1 -->
+        <div class="faq-item motion-fade-up delay-100 is-expanded">
+          <div class="faq-header">
+            <span class="font-display font-semibold text-sm sm:text-base text-white">O AuraPulse é compatível com Android e iPhone (iOS)?</span>
+            <span class="material-symbols-outlined faq-icon text-[20px] text-on-surface-variant">expand_more</span>
+          </div>
+          <div class="faq-content">
+            Sim! O AuraPulse Pro sincroniza instantaneamente com qualquer smartphone Android (versão 6.0+) ou iPhone com iOS (versão 12.0+) através do aplicativo oficial via Bluetooth 5.3 de ultra baixo consumo.
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-item motion-fade-up delay-150">
+          <div class="faq-header">
+            <span class="font-display font-semibold text-sm sm:text-base text-white">Qual é o prazo de entrega e o frete?</span>
+            <span class="material-symbols-outlined faq-icon text-[20px] text-on-surface-variant">expand_more</span>
+          </div>
+          <div class="faq-content">
+            O frete é 100% grátis para todo o território brasileiro nesta oferta de lançamento. O envio é realizado via Correios com código de rastreamento enviado por e-mail e WhatsApp em até 24h úteis. O prazo médio de entrega varia de 3 a 7 dias úteis.
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-item motion-fade-up delay-200">
+          <div class="faq-header">
+            <span class="font-display font-semibold text-sm sm:text-base text-white">O relógio é à prova d'água?</span>
+            <span class="material-symbols-outlined faq-icon text-[20px] text-on-surface-variant">expand_more</span>
+          </div>
+          <div class="faq-content">
+            Sim. O AuraPulse Pro possui certificação militar 5ATM / IP68, sendo resistente a chuva, suor intenso, banho frio e natação em piscina até 50 metros de profundidade.
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-item motion-fade-up delay-250">
+          <div class="faq-header">
+            <span class="font-display font-semibold text-sm sm:text-base text-white">Como funciona a garantia de 30 dias?</span>
+            <span class="material-symbols-outlined faq-icon text-[20px] text-on-surface-variant">expand_more</span>
+          </div>
+          <div class="faq-content">
+            Se por qualquer motivo você não ficar 100% satisfeito com o seu AuraPulse Pro nos primeiros 30 dias após o recebimento, basta nos enviar uma mensagem e devolveremos todo o seu dinheiro sem burocracia ou questionamentos. Além disso, você conta com 1 ano completo de garantia de fábrica contra defeitos de fabricação.
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ INSTITUCIONAL COM DADOS DE SEGURANÇA E CONFIANÇA -->
+  <footer class="w-full bg-surface-container-lowest border-t border-white/5 py-10 px-4 sm:px-6 mb-20" role="contentinfo">
+    <div class="max-w-4xl mx-auto flex flex-col items-center text-center gap-6">
+      
+      <!-- Logo e Descrição -->
+      <div class="flex items-center gap-2">
+        <img src="assets/images/logo.png" alt="AuraPulse" class="h-6 w-auto" width="24" height="24">
+        <span class="font-display font-bold text-white text-base">AuraPulse Technologies Inc.</span>
+      </div>
+
+      <!-- Selos de Segurança e Formas de Pagamento -->
+      <div class="flex flex-wrap items-center justify-center gap-4 text-xs text-on-surface-variant">
+        <span class="flex items-center gap-1.5 bg-surface-container px-3 py-1.5 rounded-full border border-white/5">
+          <span class="material-symbols-outlined text-secondary text-[16px]">lock</span>
+          Ambiente Seguro SSL 256-bit
+        </span>
+        <span class="flex items-center gap-1.5 bg-surface-container px-3 py-1.5 rounded-full border border-white/5">
+          <span class="material-symbols-outlined text-primary-container text-[16px]">credit_card</span>
+          Cartão em até 12x
+        </span>
+        <span class="flex items-center gap-1.5 bg-surface-container px-3 py-1.5 rounded-full border border-white/5">
+          <span class="material-symbols-outlined text-secondary text-[16px]">qr_code_2</span>
+          PIX com Desconto Extra
+        </span>
+      </div>
+
+      <!-- Links Legais -->
+      <div class="flex items-center gap-4 text-xs text-on-surface-variant">
+        <a href="#" class="hover:text-primary-container transition-colors">Termos de Uso</a>
+        <span>•</span>
+        <a href="#" class="hover:text-primary-container transition-colors">Política de Privacidade</a>
+        <span>•</span>
+        <a href="#" class="hover:text-primary-container transition-colors">Rastrear Pedido</a>
+        <span>•</span>
+        <a href="#" class="hover:text-primary-container transition-colors">Suporte ao Cliente</a>
+      </div>
+
+      <!-- Copyright -->
+      <p class="text-xs text-slate-500 max-w-md">
+        © 2026 AuraPulse Inc. Todos os direitos reservados. CNPJ: 45.892.112/0001-94. As medições de saúde deste dispositivo têm finalidade de bem-estar e acompanhamento físico, não substituindo diagnósticos clínicos laboratoriais.
+      </p>
+
+    </div>
+  </footer>
+
+  <!-- BARRA DE CONVERSÃO FIXA INFERIOR (STICKY BOTTOM CONVERSION BAR) -->
+  <aside id="sticky-bar" class="fixed bottom-0 w-full z-40 pb-safe glass-bottom-bar" aria-label="Ação de compra rápida">
+    <div class="max-w-4xl mx-auto h-20 px-4 sm:px-6 flex items-center justify-between gap-3">
+      
+      <!-- Detalhes de Preço -->
+      <div class="flex flex-col justify-center">
+        <span class="text-xs text-on-surface-variant line-through leading-none">De R$ 289,00</span>
+        <div class="flex items-baseline gap-1 mt-0.5">
+          <span class="text-xs text-secondary font-bold">por</span>
+          <span id="sticky-price-val" class="font-display text-xl sm:text-2xl text-primary font-black tracking-tight">R$ 187,00</span>
+        </div>
+        <span id="sticky-terms-val" class="text-[11px] text-secondary-fixed-dim leading-none">em até 12x sem juros</span>
+      </div>
+
+      <!-- Botão de Compra Imediata -->
+      <button class="btn-primary h-12 flex-1 max-w-[210px] flex items-center justify-center gap-2 text-sm sm:text-base font-extrabold tracking-wide uppercase shadow-[0_0_24px_rgba(0,240,255,0.4)]" data-path="checkout">
+        <span>Compre Agora</span>
+        <span class="material-symbols-outlined text-[20px]">bolt</span>
+      </button>
+
+    </div>
+  </aside>
+
+  <!-- MODAL DE CHECKOUT RÁPIDO & CARRINHO -->
+  <div id="checkout-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-content">
+      
+      <!-- Topo do Modal -->
+      <div class="flex items-center justify-between pb-3 border-b border-white/10">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary-container text-[22px]">shopping_cart_checkout</span>
+          <h3 id="modal-title" class="font-display font-bold text-base text-white">Finalização Segura</h3>
+        </div>
+        <button id="close-modal-btn" class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center hover:bg-surface-container-highest transition-colors" aria-label="Fechar janela">
+          <span class="material-symbols-outlined text-[18px]">close</span>
+        </button>
+      </div>
+
+      <!-- Resumo do Produto Selecionado -->
+      <div class="mt-4 p-3 rounded-xl bg-surface-container flex items-center gap-3 border border-white/5">
+        <img src="assets/images/watch-hero.png" alt="AuraPulse Smartwatch" class="w-16 h-16 object-contain rounded-lg bg-surface-container-lowest p-1" width="64" height="64">
+        <div class="flex flex-col flex-1">
+          <span class="font-display font-bold text-sm text-white">AuraPulse™ Pro Smartwatch</span>
+          <span class="text-xs text-on-surface-variant">Titânio Aeroespacial • 41mm</span>
+          <div class="flex items-center gap-2 mt-1">
+            <span class="font-display text-sm font-black text-primary">R$ 187,00</span>
+            <span class="text-[10px] text-secondary bg-secondary/10 px-1.5 py-0.5 rounded font-bold">35% OFF</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Detalhes do Pedido -->
+      <div class="mt-4 flex flex-col gap-2 text-xs text-slate-300">
+        <div class="flex justify-between">
+          <span>Subtotal Original:</span>
+          <span class="line-through text-on-surface-variant">R$ 289,00</span>
+        </div>
+        <div class="flex justify-between text-secondary">
+          <span>Desconto de Lançamento:</span>
+          <span>- R$ 102,00</span>
+        </div>
+        <div class="flex justify-between text-secondary">
+          <span>Frete Sedex Express:</span>
+          <span class="font-bold uppercase">Grátis</span>
+        </div>
+        <div class="flex justify-between pt-2 border-t border-white/10 font-bold text-sm text-white">
+          <span>Total à Vista no PIX:</span>
+          <span class="text-primary-container font-black">R$ 177,65 <span class="text-[10px] font-normal text-secondary">(+5% off)</span></span>
+        </div>
+        <div class="flex justify-between text-[11px] text-on-surface-variant">
+          <span>Ou parcelado no Cartão:</span>
+          <span>12x de R$ 18,70 sem juros</span>
+        </div>
+      </div>
+
+      <!-- Botão de Confirmação -->
+      <div class="mt-5 flex flex-col gap-2">
+        <button id="finish-order-btn" class="btn-primary w-full py-3.5 px-4 rounded-full font-display font-extrabold text-sm uppercase flex items-center justify-center gap-2">
+          <span>Ir Para o Pagamento Seguro</span>
+          <span class="material-symbols-outlined text-[18px]">lock</span>
+        </button>
+
+        <!-- Feedback de Sucesso da Simulação -->
+        <div id="checkout-feedback" class="hidden p-3 rounded-xl bg-secondary-container/20 border border-secondary text-center text-xs text-secondary font-medium">
+          <span class="material-symbols-outlined text-[24px] block mb-1">check_circle</span>
+          Redirecionando para o gateway de pagamento seguro...
+        </div>
+      </div>
+
+      <div class="mt-3 flex items-center justify-center gap-1.5 text-[11px] text-slate-400">
+        <span class="material-symbols-outlined text-[14px] text-secondary">verified_user</span>
+        <span>Compra 100% Protegida com Criptografia de Ponta a Ponta</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TOAST FLUTUANTE DE PROVA SOCIAL (Compras em Tempo Real) -->
+  <aside id="social-toast" class="social-proof-toast flex items-center gap-3" aria-live="polite">
+    <div class="w-9 h-9 rounded-full bg-secondary-container/30 border border-secondary flex items-center justify-center text-secondary flex-shrink-0">
+      <span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+    </div>
+    <div class="flex flex-col text-left">
+      <span id="social-toast-text" class="text-xs text-slate-100 font-medium leading-snug">
+        <strong>Ricardo F.</strong> de Curitiba/PR comprou 1x AuraPulse Pro
+      </span>
+      <span id="social-toast-time" class="text-[10px] text-secondary font-semibold mt-0.5">há 2 minutos</span>
+    </div>
+  </aside>
+
+  <!-- Three.js 3D WebGL Library & Interactive Engine -->
+  <script src="assets/js/three.min.js"></script>
+  <script src="assets/js/watch3d.js"></script>
+  <!-- Script Principal de Interações e Animações -->
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

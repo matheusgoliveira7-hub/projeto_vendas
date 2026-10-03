@@ -1,0 +1,560 @@
+/**
+ * AuraPulse Design System & Production Stylesheet
+ * Baseado nas especificações do DESIGN.md
+ * Inspirado em precisão cirúrgica, telemetria médica e estética dark luxury.
+ */
+
+:root {
+  /* Surface & Substrate Palette */
+  --surface: #0e1321;
+  --surface-dim: #0e1321;
+  --surface-bright: #343948;
+  --surface-container-lowest: #090e1c;
+  --surface-container-low: #161b2a;
+  --surface-container: #1a1f2e;
+  --surface-container-high: #252a39;
+  --surface-container-highest: #303444;
+
+  /* Typography & On-Surface Colors */
+  --on-surface: #dee2f6;
+  --on-surface-variant: #b9cacb;
+  --inverse-surface: #dee2f6;
+  --inverse-on-surface: #2b303f;
+  --outline: #849495;
+  --outline-variant: #3b494b;
+
+  /* Primary Brand Tones (Electro Cyan) */
+  --primary: #dbfcff;
+  --on-primary: #00363a;
+  --primary-container: #00f0ff;
+  --on-primary-container: #00454a;
+  --surface-tint: #00dbe9;
+  --primary-glow: rgba(0, 240, 255, 0.35);
+  --primary-glow-subtle: rgba(0, 240, 255, 0.12);
+
+  /* Secondary Biometric Tones (Electric Emerald) */
+  --secondary: #4edea3;
+  --on-secondary: #003824;
+  --secondary-container: #00a572;
+  --secondary-fixed-dim: #4edea3;
+  --secondary-glow: rgba(78, 222, 163, 0.35);
+
+  /* Tertiary / Medical Alert Tones (Coral Pulse) */
+  --tertiary: #fff3f1;
+  --error: #ffb4ab;
+  --error-container: #93000a;
+  --coral-pulse: #ff3b30;
+
+  /* Typography Fonts */
+  --font-display: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Spacing Tokens */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.5rem;
+  --gutter: 1rem;
+
+  /* Radii */
+  --radius-sm: 0.5rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-xl: 2rem;
+  --radius-pill: 9999px;
+
+  /* Easing curves (Framer Motion spring emulation) */
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reset e Base Standards */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-body);
+  background-color: var(--surface);
+  color: var(--on-surface);
+  color-scheme: dark;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--surface);
+  overflow-x: hidden;
+  position: relative;
+  line-height: 1.5;
+}
+
+/* Safe areas para dispositivos móveis notch / home bar */
+.pb-safe {
+  padding-bottom: max(env(safe-area-inset-bottom, 0px), 16px);
+}
+.pt-safe {
+  padding-top: max(env(safe-area-inset-top, 0px), 16px);
+}
+
+/* Scrollbar invisível com navegação fluida */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--surface-container-lowest);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--surface-container-highest);
+  border-radius: var(--radius-pill);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--outline);
+}
+
+/* Tipografia Estruturada */
+h1, h2, h3, h4, h5, h6, .font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.025em;
+  font-weight: 700;
+}
+
+.text-gradient-cyan {
+  background: linear-gradient(135deg, #dbfcff 0%, #00f0ff 60%, #4edea3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-emerald {
+  background: linear-gradient(135deg, #6ffbbe 0%, #4edea3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Glassmorphism & Surface Elevation Tokens */
+.glass-panel {
+  background: rgba(22, 27, 42, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-elevated {
+  background: rgba(26, 31, 46, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(0, 240, 255, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.glass-nav {
+  background: rgba(9, 14, 28, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.glass-bottom-bar {
+  background: rgba(9, 14, 28, 0.92);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border-top: 1px solid rgba(0, 240, 255, 0.18);
+  box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.6);
+}
+
+/* Grid de Fundo Técnico e Substrato Cirúrgico */
+.tech-grid-bg {
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(0, 240, 255, 0.08) 0%, transparent 70%),
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 100% 100%, 32px 32px, 32px 32px;
+}
+
+/* Toast de Prova Social Flutuante */
+.social-proof-toast {
+  position: fixed;
+  bottom: 96px;
+  left: 16px;
+  z-index: 45;
+  background: rgba(22, 27, 42, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  border-radius: var(--radius-lg);
+  padding: 0.75rem 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transform: translateY(120%);
+  opacity: 0;
+  transition: transform 0.5s var(--ease-spring), opacity 0.5s;
+  pointer-events: none;
+  max-width: 320px;
+}
+
+.social-proof-toast.is-active {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Tabela Comparativa de Especificações */
+.comparison-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: 0.875rem 1rem;
+  font-size: 0.8125rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.comparison-table th {
+  background: var(--surface-container-high);
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.comparison-table tr:last-child td {
+  border-bottom: none;
+}
+
+.comparison-table .aurapulse-col {
+  background: rgba(0, 240, 255, 0.06);
+  border-left: 1px solid rgba(0, 240, 255, 0.2);
+  border-right: 1px solid rgba(0, 240, 255, 0.2);
+  color: #dbfcff;
+  font-weight: 600;
+}
+
+/* Modos de Mostrador do Relógio */
+.watch-screen-content {
+  transition: opacity 0.25s var(--ease-smooth), transform 0.25s var(--ease-smooth);
+}
+
+.watch-screen-content.is-switching {
+  opacity: 0;
+  transform: scale(0.92);
+}
+
+/* Animações inspiradas em Framer Motion */
+.motion-fade-up {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s var(--ease-spring), transform 0.75s var(--ease-spring);
+  will-change: opacity, transform;
+}
+
+.motion-fade-in {
+  opacity: 0;
+  transition: opacity 0.8s var(--ease-smooth);
+  will-change: opacity;
+}
+
+.motion-scale-up {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.75s var(--ease-spring), transform 0.75s var(--ease-spring);
+  will-change: opacity, transform;
+}
+
+/* Classe ativada via IntersectionObserver */
+.motion-fade-up.is-visible,
+.motion-fade-in.is-visible,
+.motion-scale-up.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Escalonamento de animação (Stagger delays) */
+.delay-100 { transition-delay: 100ms; }
+.delay-150 { transition-delay: 150ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+.delay-500 { transition-delay: 500ms; }
+
+/* Animação Contínua da Linha de ECG (Eletrocardiograma em Tempo Real) */
+@keyframes ecg-pulse {
+  0% {
+    stroke-dashoffset: 160;
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -160;
+  }
+}
+
+.ecg-line {
+  stroke-dasharray: 80 80;
+  animation: ecg-pulse 2.2s linear infinite;
+}
+
+/* Animação de Pulso Cardíaco e Halos */
+@keyframes halo-expand {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(0.85);
+    opacity: 0.6;
+  }
+}
+
+.halo-pulse {
+  animation: halo-expand 4s ease-in-out infinite;
+}
+
+/* Efeito de flutuação suave do produto */
+@keyframes float-watch {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(0.8deg);
+  }
+}
+
+.floating-product {
+  animation: float-watch 6s ease-in-out infinite;
+}
+
+/* Interações Táteis e Acessibilidade */
+.btn-primary {
+  background-color: var(--primary-container);
+  color: #002b2e;
+  font-family: var(--font-display);
+  font-weight: 800;
+  border-radius: var(--radius-pill);
+  transition: transform 0.2s var(--ease-spring), box-shadow 0.2s var(--ease-spring), filter 0.2s;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 0 35px rgba(0, 240, 255, 0.6);
+  filter: brightness(1.05);
+}
+
+.btn-primary:active {
+  transform: scale(0.97);
+}
+
+.btn-secondary {
+  background: rgba(37, 42, 57, 0.8);
+  color: var(--on-surface);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  transition: all 0.2s var(--ease-spring);
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background: rgba(48, 52, 68, 0.9);
+  border-color: var(--primary-container);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* Classe de acessibilidade para navegação por leitores de tela */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.sr-only:focus {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 100;
+  width: auto;
+  height: auto;
+  padding: 0.75rem 1.25rem;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+  background: var(--primary-container);
+  color: var(--on-primary);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+}
+
+/* Seletor de Variantes Interativo (Min 44x44px para Fitts' Law) */
+.variant-swatch {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: var(--radius-pill);
+  position: relative;
+  cursor: pointer;
+  transition: all 0.25s var(--ease-spring);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.variant-swatch.active {
+  box-shadow: 0 0 0 2px var(--surface-container), 0 0 0 4px var(--primary-container);
+  transform: scale(1.08);
+}
+
+/* Toggle Switch Interativo */
+.switch-track {
+  width: 54px;
+  height: 32px;
+  min-width: 54px;
+  min-height: 32px;
+  border-radius: var(--radius-pill);
+  background: var(--surface-container-highest);
+  transition: background-color 0.3s var(--ease-spring);
+  position: relative;
+  cursor: pointer;
+}
+
+.switch-track.active {
+  background: var(--primary-container);
+}
+
+.switch-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-pill);
+  background: #ffffff;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  transition: transform 0.3s var(--ease-spring), background-color 0.3s;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.switch-track.active .switch-thumb {
+  transform: translateX(22px);
+  background: #00363a;
+}
+
+/* Modal de Checkout / Carrinho */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(9, 14, 28, 0.85);
+  backdrop-filter: blur(16px);
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s var(--ease-smooth);
+}
+
+.modal-backdrop.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--surface-container-low);
+  border-top: 1px solid rgba(0, 240, 255, 0.25);
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  padding: 1.5rem;
+  z-index: 101;
+  transform: translateY(100%);
+  transition: transform 0.4s var(--ease-spring);
+  max-width: 540px;
+  margin: 0 auto;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-backdrop.is-open .modal-content {
+  transform: translateY(0);
+}
+
+/* Accordion de Perguntas Frequentes (FAQ) */
+.faq-item {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  background: var(--surface-container);
+  overflow: hidden;
+  transition: border-color 0.25s;
+}
+
+.faq-item:hover {
+  border-color: rgba(0, 240, 255, 0.25);
+}
+
+.faq-header {
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+}
+
+.faq-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s var(--ease-smooth), padding 0.35s var(--ease-smooth);
+  padding: 0 1.25rem;
+  color: var(--on-surface-variant);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.faq-item.is-expanded .faq-content {
+  max-height: 250px;
+  padding: 0 1.25rem 1.25rem 1.25rem;
+}
+
+.faq-icon {
+  transition: transform 0.3s var(--ease-spring);
+}
+
+.faq-item.is-expanded .faq-icon {
+  transform: rotate(180deg);
+  color: var(--primary-container);
+}
+
+/* Redução de Movimento Acessível (Prefers-reduced-motion) */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

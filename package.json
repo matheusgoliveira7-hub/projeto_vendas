@@ -1,0 +1,22 @@
+{
+  "name": "aurapulse-storefront",
+  "version": "2.0.0",
+  "description": "High-conversion 3D precision smartwatch landing page built with modern HTML5, CSS3, Three.js and Vanilla JavaScript.",
+  "scripts": {
+    "start": "npx serve . -p 3000",
+    "dev": "python -m http.server 3000",
+    "test": "node -c assets/js/main.js && node -c assets/js/watch3d.js",
+    "lint": "python .agent/skills/frontend-design/scripts/accessibility_checker.py ."
+  },
+  "keywords": [
+    "threejs",
+    "webgl",
+    "smartwatch",
+    "landing-page",
+    "ecommerce",
+    "tailwind",
+    "pbr"
+  ],
+  "author": "AuraPulse Technologies",
+  "license": "MIT"
+}
